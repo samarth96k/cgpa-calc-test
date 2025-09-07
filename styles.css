@@ -1,6 +1,7 @@
 *{
   padding: 10px;
   background-color: #B6C8A9;
+  font-size:40px;
 }
 h1{
   color: #224870;
@@ -90,7 +91,8 @@ option:focus {
     font-family: "Libertinus Serif", serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 2em;
+  font-size: 40px;
   color: #224870;
 
 }
+
