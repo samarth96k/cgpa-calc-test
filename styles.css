@@ -1,0 +1,95 @@
+*{
+  padding: 10px;
+  background-color: #B6C8A9;
+}
+h1{
+  color: #224870;
+  text-align: center;
+  font-family: "Libertinus Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#cgpaform{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit-button{
+  display: block;
+}
+
+#func-buttons{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+select {
+  border: 2px solid #4EA5D9;
+  background: #4EA5D9;
+  padding: 10px;
+  transition: 0.4s;
+  color: 3F612D;
+  width:250px;
+  text-align: center;
+}
+
+select:hover,
+select:focus {
+
+  background: #0081cb;
+}
+select::picker-icon {
+  color: #999999;
+  transition: 0.4s rotate;
+}
+select:open::picker-icon {
+  rotate: 180deg;
+}
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+option:nth-of-type(odd) {
+  background: white;
+}
+
+option:hover,
+option:focus {
+  background: plum;
+}
+
+.but {
+  background-color: #0081cb; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 20%;
+}
+
+#heading{
+  font-family: "Libertinus Serif", serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 80px;
+}
+
+#cgpa-div{
+    font-family: "Libertinus Serif", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 40px;
+  color: #224870;
+}
