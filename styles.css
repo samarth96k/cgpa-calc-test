@@ -1,98 +1,258 @@
-*{
-  padding: 10px;
-  background-color: #B6C8A9;
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-h1{
+
+body {
+  background: linear-gradient(135deg, #B6C8A9 0%, #A8B89A 100%);
+  font-family: "Libertinus Serif", serif;
+  min-height: 100vh;
+  padding: 20px;
+  color: #2c3e50;
+}
+
+/* Main heading */
+h1 {
   color: #224870;
   text-align: center;
   font-family: "Libertinus Serif", serif;
   font-weight: 400;
   font-style: normal;
+  margin-bottom: 30px;
 }
 
-#cgpaform{
-   display: flex;
+#heading {
+  font-family: "Libertinus Serif", serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+/* Form container */
+#cgpaform {
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
-#submit-button{
-  display: block;
+#grade-credit-list {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#func-buttons{
+/* Course containers */
+.course {
   display: flex;
-  justify-content:space-evenly;
+  gap: 15px;
+  margin-bottom: 15px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: transparent;
+  padding: 10px;
 }
 
+/* Select styling with better browser compatibility */
 select {
   border: 2px solid #4EA5D9;
-  background: #4EA5D9;
-  padding: 10px;
-  transition: 0.4s;
-  color: 3F612D;
-  width:250px;
+  background: #0081cb;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  width: 200px;
   text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Libertinus Serif", serif;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Browser compatibility */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Custom arrow */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3e%3cpath d='M8 10.5l-4-4h8l-4 4z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
 }
 
 select:hover,
 select:focus {
+  background: #006ba6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  outline: none;
+  border-color: #0081cb;
+}
 
-  background: #0081cb;
+/* Option styling with fallbacks */
+select option {
+  background: #ffffff;
+  color: #333333;
+  padding: 12px;
+  border: none;
+  font-family: "Libertinus Serif", serif;
 }
-select::picker-icon {
-  color: #999999;
-  transition: 0.4s rotate;
+
+select option:hover {
+  background: #e8f4fd;
 }
-select:open::picker-icon {
-  rotate: 180deg;
-}
-option {
+
+/* Button container */
+#func-buttons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 20px;
-  border: 2px solid #dddddd;
-  background: #eeeeee;
-  padding: 10px;
-  transition: 0.4s;
-}
-option:nth-of-type(odd) {
-  background: white;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  background: transparent;
+  padding: 20px;
 }
 
-option:hover,
-option:focus {
-  background: plum;
-}
-
+/* Button styling */
 .but {
-  background-color: #0081cb; /* Green */
+  background: linear-gradient(145deg, #0081cb, #006ba6);
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 200px;
-  border-radius: 20%;
-}
-
-#heading{
   font-family: "Libertinus Serif", serif;
-  font-weight: 800;
-  font-style: normal;
-  font-size: 80px;
+  font-weight: 600;
+  min-width: 200px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 129, 203, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-#cgpa-div{
-    font-family: "Libertinus Serif", serif;
+.but:hover {
+  background: linear-gradient(145deg, #006ba6, #005a8b);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 129, 203, 0.4);
+}
+
+.but:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 129, 203, 0.3);
+}
+
+/* CGPA result display */
+#cgpa-div {
+  font-family: "Libertinus Serif", serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 40px;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #224870;
-
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeInUp 0.6s ease;
 }
 
+#cgpa-div h1 {
+  background: linear-gradient(45deg, #224870, #4EA5D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  margin: 0;
+  font-size: inherit;
+}
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .course {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  select {
+    width: 250px;
+  }
+  
+  #func-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .but {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  #grade-credit-list {
+    padding: 15px;
+  }
+  
+  select {
+    width: 200px;
+    font-size: 14px;
+  }
+  
+  .but {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Focus styles for accessibility */
+select:focus,
+.but:focus {
+  outline: 3px solid rgba(78, 165, 217, 0.5);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .but {
+    display: none;
+  }
+}
